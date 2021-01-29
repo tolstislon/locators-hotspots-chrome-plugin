@@ -19,7 +19,7 @@
     position: relative;
     will-change: overflow;
     width: 100%;
-    height: 100hv;
+    height: 100 hv;
 }
 
 #coverageInfoBar {
@@ -34,7 +34,7 @@
     background-color: dodgerblue;
 }
 
-.coverageInfoBar input:checked+label {
+.coverageInfoBar input:checked + label {
     color: #555;
     border-top: 1px solid #009933;
     border-bottom: 1px solid #fff;
@@ -68,6 +68,189 @@
 }
 
 /* Активация секций с помощью псевдокласса :checked */
-#tab1:checked~#section1, #tab2:checked~#section2 {
+#tab1:checked ~ #section1, #tab2:checked ~ #section2 {
     display: block;
+}
+
+
+/* ------------------- */
+.lds-spinner-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+.lds-spinner {
+    color: black;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #000000;
+}
+
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+#locatorsInfoBar {
+    z-index: 9000 !important;
+    background-color: whitesmoke;
+    position: fixed;
+    right: 100px;
+    top: 20px;
+    box-shadow: 3px 5px 14px #0000008a;
+    border-radius: .25rem;
+}
+
+#locatorsInfoBar #infoBar-header {
+    width: 100%;
+    height: 20px;
+    background-color: #8e8d92;
+    border-radius: .25rem .25rem 0 0;
+}
+
+#locatorsInfoBar .close-locators {
+    position: absolute;
+    right: 7px;
+    top: 6px;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    line-height: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 180, 180, 1) 0%, rgba(252, 70, 70, 1) 20%);
+}
+
+#locatorsInfoBar #infoBar-body {
+    width: 100%;
+    height: 480px;
+    border-radius: 0 0 .25rem .25rem;
+}
+
+.locators-pin {
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    z-index: 5000;
+    width: 25px;
+    height: 25px;
+    font-size: 21px;
+    line-height: 25px;
+    vertical-align: middle;
+    padding: 0;
+    text-align: center;
+    background: black;
+    font-weight: 600;
+}
+
+.locators-pin:hover {
+    opacity: .9;
+}
+
+.locators-pin-left::after {
+    content: '';
+    position: absolute;
+    right: -23px;
+    top: 1%;
+    display: block;
+    border: 12px solid transparent;
+    border-left: 12px solid black;
+}
+
+.locators-pin-right::before {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 1%;
+    display: block;
+    border: 12px solid transparent;
+    border-right: 12px solid black;
 }
